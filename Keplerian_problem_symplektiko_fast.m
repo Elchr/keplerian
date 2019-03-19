@@ -40,11 +40,11 @@ end
 plot(log10(time2),log10(dE),'*')
 %set(gca,'xscale','log','yscale','log')
 mdl = fitlm(log10(time2),log10(dE))
-%hl = lsline;  %Εφαρμογή ευθείας ελαχίστων τετραγώνων
+%hl = lsline;  %least square line
 %B = [ones(size(hl.XData(:))), hl.XData(:)]\hl.YData(:);
 %Slope = B(2)
 %axis([1,10,1,10])
 grid on
-ylabel('log|ΔE|')
-xlabel('logΔt')
-title('Συμπλεκτικό Σχήμα Euler T=sqrt(2)')
+ylabel('log|Γ„E|')
+xlabel('logΓ„t')
+title('Γ“ΓµΓ¬Γ°Γ«Γ¥ΓªΓ΄Γ©ΓªΓΌ Γ“Γ·ΓΓ¬Γ΅ Euler T=sqrt(2)')
