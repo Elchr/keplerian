@@ -47,4 +47,4 @@ mdl = fitlm(log10(time2),log10(dE))
 grid on
 ylabel('log|ÄE|')
 xlabel('logÄt')
-title('Óõìðëåêôéêü Ó÷Þìá Euler T=sqrt(2)')
+title('Symplectic Euler T=sqrt(2)')
