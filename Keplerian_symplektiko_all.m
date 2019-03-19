@@ -14,7 +14,7 @@ En=zeros(1,nstep);
 time=zeros(1,nstep);
 res=zeros(nstep,6);
 
-%Yπολογισμός χαρακτηριστικών έλλειψης
+%Ellipse characteristics
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Energy=(xold(4)^2+xold(5)^2)/2-G*M/sqrt(xold(1)^2+xold(2)^2);
 if Energy<0 
@@ -23,7 +23,7 @@ else fprintf('Error E>0')
     return; %stop running
 end
 
-l=xold(1)*xold(5)-xold(2)*xold(4); %στροφορμή
+l=xold(1)*xold(5)-xold(2)*xold(4); %angular momentum
 e=sqrt(1-l^2/(G*M*a));
 
 cosf=((a*(1-e^2)/sqrt(xold(1)^2+xold(2)^2))-1)/e;
@@ -50,7 +50,7 @@ elseif xold(2)<0
 end
 t0=(e*sin(E)-E)/(sqrt(G*M/(a^3)));
 
-%%%Euler - Αριθμητική Μέθοδος
+%%%Euler - Arithmetic method
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 for i=1:1:nstep 
    v=(xold(4)^2+xold(5)^2+xold(6)^2)^(1/2);
@@ -86,7 +86,7 @@ ylabel('E')
 title('Energy in Earths motion')
 grid on
 
-%Newton's Method και σχεδιασμός τροχιάς (πολλά t)
+%Newton's Method and trajectory
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 xnew2=zeros(nstep,6);
 for h=1:1:nstep
